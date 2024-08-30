@@ -1,0 +1,36 @@
+---
+const items = ["Smart Contract Development", "ZK Solutions", "Infrastructure"];
+const repeatCount = 5;
+---
+
+<section class="border-white/20 border-y">
+  <div class="text-white mx-auto">
+    <div class="mx-auto overflow-hidden py-2 relative">
+      <div
+        class="absolute left-0 top-0 bottom-0 w-44 z-10 bg-gradient-to-r from-black via-transparent to-transparent"
+      >
+      </div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-44 z-10 bg-gradient-to-l from-black via-transparent to-transparent"
+      >
+      </div>
+      <div
+        class="flex items-center animate-marquee font-black font-display gap-4 tracking-widest uppercase whitespace-nowrap"
+      >
+        {
+          Array(repeatCount)
+            .fill(items)
+            .flat()
+            .map((item, index) => (
+              <p>
+                {item}
+                <span class="hidden lg:inline ml-2" aria-hidden="true">
+                  ✺
+                </span>
+              </p>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

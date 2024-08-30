@@ -1,0 +1,114 @@
+---
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const teamMembers = [
+  {
+    name: "casiojapi",
+    role: "Core Dev",
+    github: "https://github.com/casiojapi",
+  },
+  {
+    name: "Sporadix",
+    role: "Full Stack Dev",
+    github: "https://github.com/Sporadix",
+  },
+  {
+    name: "Fatalbatros",
+    role: "Lead ZK Researcher",
+    github: "https://github.com/fatalbatros",
+  },
+  { name: "Bezze", role: "Back End Dev", gitlab: "https://gitlab.com/bezze" },
+  { name: "Parsley3d", role: "CEO", twitter: "https://twitter.com/parsley3d" },
+];
+---
+
+<section class="border-white/20 border mx-auto max-w-7xl lg:py-14" id="About">
+  <header class="mx-auto max-w-7xl">
+    <h2
+      class="text-white font-display uppercase text-3xl lg:text-6xl mt-8 mb-4 text-center"
+    >
+      ABOUT US
+    </h2>
+  </header>
+  <div
+    class="text-white px-4 md:px-8 md:w-[80%] mx-auto p-8 lg:mx-auto max-w-4xl"
+  >
+    <div
+      class="text-base lg:text-xl font-display flex flex-col gap-9 text-zinc-400"
+    >
+      <p>
+        We are a group of seasoned engineers and software developers looking to
+        make your ecosystem grow. With years of experience working on Core
+        Blockchain Development, Smart Contract deployment and Cyber security we
+        aim to provide integral and safe solutions for our clients.
+      </p>
+      <p>
+        Always on the forefront of technologies we create in-house products and
+        solutions for Zk and Optimistic roll-ups.
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="text-white px-4 md:px-8 md:w-[80%] mx-auto p-8 lg:mx-auto max-w-4xl"
+  >
+    {
+      teamMembers.map((member, index) => (
+        <div class="py-8 relative">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <span class="text-white font-display text-xl mb-2 sm:mb-0">
+              <span class="text-carrot">/</span>
+              {member.name}
+              {member.github && (
+                <a
+                  href={member.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ml-2"
+                >
+                  <i class="fa-brands fa-github" />
+                </a>
+              )}
+              {member.gitlab && (
+                <a
+                  href={member.gitlab}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ml-2"
+                >
+                  <i class="fa-brands fa-gitlab" />
+                </a>
+              )}
+              {member.twitter && (
+                <a
+                  href={member.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ml-2"
+                >
+                  <i class="fa-brands fa-x-twitter" />
+                </a>
+              )}
+            </span>
+            <span class="text-white font-display lg:text-xl">
+              <span class="text-carrot">/</span>
+              {member.role}
+            </span>
+          </div>
+          {index !== teamMembers.length - 1 && (
+            <div class="absolute bottom-0 left-1/2 w-full transform -translate-x-1/2 h-px bg-white/20" />
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .fa-brands {
+    transition: color 0.3s ease;
+  }
+  .fa-brands:hover {
+    color: #ffa500; /* Carrot color, adjust if needed */
+  }
+</style>
